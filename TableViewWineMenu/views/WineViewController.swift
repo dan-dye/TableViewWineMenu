@@ -8,14 +8,27 @@
 import UIKit
 
 class WineViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var selectedWine: Wine?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameLabel.text = selectedWine!.getName()
+        yearLabel.text = selectedWine!.getYear()
+        typeLabel.text = selectedWine!.getType()
+        regionLabel.text = selectedWine!.getRegion()
+        priceLabel.text = "\(selectedWine!.getGlassPrice())/\(selectedWine!.getBottlePrice())"
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 

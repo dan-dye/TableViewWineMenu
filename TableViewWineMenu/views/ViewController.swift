@@ -9,6 +9,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let appLogic = AppLogic()
+    var selectedWine: Wine?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        // Do any additional setup after loading the view.
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -23,10 +34,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedWine  = appLogic.getWine(indexPath.row)
+        performSegue(withIdentifier: "toWineView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toWineView") {
+            if let destination = segue.destination as? WineViewController {
+                destination.selectedWine = selectedWine
+            }
+        }
     }
 
 

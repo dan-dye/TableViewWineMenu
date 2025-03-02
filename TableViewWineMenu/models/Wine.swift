@@ -31,4 +31,21 @@ struct Wine {
     func getType() -> String {
         return type
     }
+    
+    func getYear() -> String {
+        return year
+    }
+    
+    func getRegion() -> String {
+        return region
+    }
+    
+    func getGlassPrice() -> Int {
+        return pricePerGlass
+    }
+    
+    func getBottlePrice() -> Int {
+        return pricePerBottle
+    }
+
 }
