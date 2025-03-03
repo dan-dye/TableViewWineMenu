@@ -19,11 +19,12 @@ class WineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set labels to selected wine passed from view controller
         nameLabel.text = selectedWine!.getName()
         yearLabel.text = selectedWine!.getYear()
         typeLabel.text = selectedWine!.getType()
         regionLabel.text = selectedWine!.getRegion()
-        priceLabel.text = "\(selectedWine!.getGlassPrice())/\(selectedWine!.getBottlePrice())"
+        priceLabel.text = "\(selectedWine!.getGlassPrice()) / \(selectedWine!.getBottlePrice())"
         // Do any additional setup after loading the view.
     }
     

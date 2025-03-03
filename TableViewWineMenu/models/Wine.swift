@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Wine model with name, year, region, type elements as well as price per glass and per bottle.
 struct Wine {
     init(name: String, year: String, type: String, region: String, pricePerGlass: Int, pricePerBottle: Int) {
         self.name = name

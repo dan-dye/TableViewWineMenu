@@ -8,6 +8,7 @@
 import Foundation
 
 class AppLogic {
+    //Menu list
     var wineList = [
         Wine(name: "Nicolas Feuillatte", year: "--", type: "Champagne", region: "France", pricePerGlass: 25, pricePerBottle: 95),
         Wine(name: "Flowers", year: "2021", type: "Chardonnay", region: "Sonoma Coast", pricePerGlass: 20, pricePerBottle: 80),
@@ -21,6 +22,7 @@ class AppLogic {
         Wine(name: "Stoller Family Estates", year: "2021", type: "Pinot Noir", region: "Orgeon", pricePerGlass: 17, pricePerBottle: 65)
     ]
     
+    //Returns single wine from list at a given index
     func getWine(_ index: Int) -> Wine {
         return wineList[index]
     }
